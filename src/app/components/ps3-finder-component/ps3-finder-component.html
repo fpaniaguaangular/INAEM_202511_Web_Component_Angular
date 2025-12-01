@@ -1,0 +1,7 @@
+
+<input type="text" [(ngModel)]="gameTitle" (input)="filtrar()">
+<table>
+@for (item of selectedPs3Covers; track $index) {
+    <tr><td>{{item.title}}</td></tr>
+}
+</table>

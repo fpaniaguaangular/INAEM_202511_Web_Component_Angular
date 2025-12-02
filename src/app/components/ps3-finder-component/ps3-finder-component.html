@@ -1,7 +1,16 @@
-
-<input type="text" [(ngModel)]="gameTitle" (input)="filtrar()">
-<table>
-@for (item of selectedPs3Covers; track $index) {
-    <tr><td>{{item.title}}</td></tr>
-}
-</table>
+<div class="container">
+    <input type="text" [(ngModel)]="gameTitle" (input)="filtrar()">
+    <div class="counter">{{gamesCounter()}}</div>
+    <table>
+        <tr>
+            <th>Juego</th>
+            <th>Género</th>
+        </tr>
+        @for (item of selectedPs3Covers(); track $index) {
+        <tr>
+            <td>{{item.Game}}</td>
+            <td>{{item.Genre}}</td>
+        </tr>
+        }
+    </table>
+</div>

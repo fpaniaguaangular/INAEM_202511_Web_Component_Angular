@@ -9,12 +9,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './ps3-finder-component.css',
 })
 export class Ps3FinderComponent {
-  public PS3_URL: string = 'https://fpaniaguaangular.github.io/gamecovers/assets/gamecovers/covers_ps3/ps3_covers.json';
   private ps3LoaderService = inject(Ps3LoaderService);
   public ps3Covers: any = null;
   public selectedPs3Covers = signal<any[] | null>(null);
   public gameTitle: string = "";
-  public gamesCounter = computed(() => this.selectedPs3Covers()?.length ?? 0);
+  public gamesCounter = 
+    computed(() => this.selectedPs3Covers()?.length ?? 0);
   constructor() {
     effect(() => {
       this.ps3Covers = this.ps3LoaderService.ps3GamesData();
@@ -23,6 +23,8 @@ export class Ps3FinderComponent {
     });
   }
   filtrar() {
-    this.selectedPs3Covers.set(this.ps3Covers.filter((game: any) => game.Game.toLowerCase().includes(this.gameTitle.toLowerCase())));
+    this.selectedPs3Covers.
+      set(this.ps3Covers.filter((game: any) => 
+        game.Game.toLowerCase().includes(this.gameTitle.toLowerCase())));
   }
 }

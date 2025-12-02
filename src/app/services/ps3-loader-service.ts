@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class Ps3LoaderService {
-  private PS3_URL: string = 'https://fpaniaguaangular.github.io/gamesdb/PS4Games.json';
+  private PS3_URL: string = 'https://fpaniaguaangular.github.io/gamesdb/PS3Games.json';
   private httpClient = inject(HttpClient);
   public ps3GamesData = signal<any[]>([]);
   constructor() {

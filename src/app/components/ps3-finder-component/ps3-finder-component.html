@@ -4,12 +4,12 @@
     <table>
         <tr>
             <th>Juego</th>
-            <th>Género</th>
+            <th>Año</th>
         </tr>
         @for (item of selectedPs3Covers(); track $index) {
         <tr>
             <td>{{item.Game}}</td>
-            <td>{{item.Genre}}</td>
+            <td>{{item.Year}}</td>
         </tr>
         }
     </table>
